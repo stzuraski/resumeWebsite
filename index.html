@@ -40,7 +40,7 @@
 					</section>
 
 				<!-- Begin Form -->
-				<form id="form" method="POST" action="sendEmail.php">
+				<form id="form">
 					<!-- Services Table -->
 					<h2>Services</h2>
 					<section id="two">
@@ -295,65 +295,50 @@
 			<!-- End Remove Button script -->
 
 			<!-- Begin form submission script -->
+
 			<script>
-				document.getElementById("form").addEventListener("submit", function(event)
-				{
-					event.preventDefault(); // Prevent the form from submitting the traditional way
-
-					// Get all selected services (checkboxes)
-					var selectedServices = document.querySelectorAll('input[name="services[]"]:checked');
-					
-					// Check if no services are selected
-					if (selectedServices.length === 0)
-					{
-						// Alert the user to select a service
-						alert("Please select at least one service.");
-						return; // Stop the form submission
-					}
-
-					var formData = new FormData(this); // Get all form data
-
-					var xhr = new XMLHttpRequest();
-					xhr.open("POST", "sendEmail.php", true);
-
-					// Log the form data for debugging
-					console.log("Form Data: ", formData);
-
-					// When the request is successful, show the success message
-					xhr.onload = function()
-					{
-						console.log(xhr.status); // Log status code
-						console.log(xhr.responseText); // Log response text
-
-						if (xhr.status == 200)
-						{
-							// Hide the form
-							document.getElementById("form").reset(); // Optionally reset form fields
-
-							// Show thank you popup
-							document.getElementById("thank-you-popup").style.display = "block";
-
-							// Optionally hide the popup after a few seconds
-							setTimeout(function()
-							{
-								document.getElementById("thank-you-popup").style.display = "none";
-							}, 10000); // Hide after 10 seconds
-						} else
-						{
-							alert("Something went wrong. Please try again.");
-						}
+				document.getElementById("form").addEventListener("submit", function(event) {
+					event.preventDefault();
+				
+					const selectedServices = Array.from(document.querySelectorAll('input[name="services[]"]:checked'))
+						.map(cb => cb.value)
+						.join(", ");
+				
+					const form = this;
+					const formData = {
+						name: form["demo-name"].value,
+						email: form["demo-email"].value,
+						category: form["demo-category"].value,
+						services: selectedServices,
+						copy: form["demo-copy"].checked ? "Yes" : "No",
+						human: form["demo-human"].checked ? "Yes" : "No",
+						message: form["demo-message"].value
 					};
-
-					// Handle error if the request fails
-					xhr.onerror = function()
-					{
-						alert("Request failed. Please try again later.");
-					};
-
-					// Send the form data to the server
-					xhr.send(formData);
+				
+					emailjs.send("m7t2r4ztbPG_7ugP-", "template_stzresumewebsite", formData)
+					.then(() => {
+						document.getElementById("form").reset();
+						document.getElementById("thank-you-popup").style.display = "block";
+						setTimeout(() => {
+							document.getElementById("thank-you-popup").style.display = "none";
+						}, 10000);
+					}, (error) => {
+						console.error("EmailJS error:", error);
+						alert("Something went wrong. Please try again.");
+					});
 				});
-			</script>
+				</script>
+				
 			<!-- End form submission script -->
+
+			<!-- EmailJS Script -->
+			<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+				<script type="text/javascript">
+				(function(){
+					emailjs.init("m7t2r4ztbPG_7ugP-"); // Replace with your actual EmailJS public key
+				})();
+			</script>
+
+			<!-- end EmailJS Script -->
 	</body>
 </html>
