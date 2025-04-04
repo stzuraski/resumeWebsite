@@ -299,7 +299,19 @@
 			<script>
 				document.getElementById("form").addEventListener("submit", function(event) {
 					event.preventDefault();
-				
+					
+					// Map category value to corresponding label
+					const categoryMap = {
+						"0": "None selected",
+						"1": "Undergrad",
+						"2": "Graduate School",
+						"3": "Professional"
+					};
+
+					// Get the category label based on the selected value
+					const selectedCategory = form["demo-category"].value;
+					const categoryLabel = categoryMap[selectedCategory] || categoryMap["0"];  // Default to "None selected"
+
 					const selectedServices = Array.from(document.querySelectorAll('input[name="services[]"]:checked'))
 						.map(cb => cb.value)
 						.join(", ");
@@ -308,12 +320,15 @@
 					const formData = {
 						name: form["demo-name"].value,
 						email: form["demo-email"].value,
-						category: form["demo-category"].value,
+						category: categoryLabel,
 						services: selectedServices,
-						copy: form["demo-copy"].checked ? "Yes" : "No",
-						human: form["demo-human"].checked ? "Yes" : "No",
 						message: form["demo-message"].value
 					};
+
+					// Add CC if "demo-copy" checkbox is checked
+					if (form["demo-copy"].checked) {
+						formData.cc = form["demo-email"].value;  // CC the user's email
+					}
 				
 					emailjs.send("service_lhwknnd", "template_stzresumeweb", formData)
 					.then(() => {
@@ -327,7 +342,7 @@
 						alert("Something went wrong. Please try again.");
 					});
 				});
-				</script> 
+			</script> 
 				
 			<!-- End form submission script -->
 
