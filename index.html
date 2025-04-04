@@ -300,6 +300,7 @@
 				document.getElementById("form").addEventListener("submit", function(event) {
 					event.preventDefault();
 					
+					const form = this;
 					// Map category value to corresponding label
 					const categoryMap = {
 						"0": "None selected",
@@ -316,7 +317,6 @@
 						.map(cb => cb.value)
 						.join(", ");
 				
-					const form = this;
 					const formData = {
 						name: form["demo-name"].value,
 						email: form["demo-email"].value,
