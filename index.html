@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>EABrown Resumes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header" style="text-align: left;">
+			<div class="inner" style="display: flex; flex-direction: column; align-items: center;">
+				<a href="https://www.linkedin.com/in/eannabrown/" target="_blank" class="image avatar">
+					<img src="images/lizlinkedin.jpg" alt="Elizabeth Brown Avatar" style="display: block; margin-bottom: 10px;" />
+				</a>
+				<h1 style="text-align: left; width: 100%;">
+					<strong>Hi, I'm Elizabeth Brown, a Georgetown and Pepperdine alumnus. With experience as a Senior Analyst in Goldman Sachs’ Operations, I now work as a Sr. Business Planning Specialist at AMD.</strong>
+				</h1>
+			</div>
+		</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>The Elizabeth Method, Crafting a Journey to Success</h2>
+						</header>
+						<p>During college, I developed a passion for helping friends secure opportunities at top companies. I refined resumes, optimized LinkedIn profiles, crafted compelling cover letters, and provided interview coaching—leading to successful offers at firms like Goldman Sachs, PwC, Deloitte, and WSP. I successfully cracked AI screenings and received interest and offers from McKinsey, JPMorgan, Pfizer, and even Deloitte. Now, I’m committed to helping others achieve the same success.</p>
+					</section>
+
+				<!-- Begin Form -->
+				<form id="form" method="POST" action="sendEmail.php">
+					<!-- Services Table -->
+					<h2>Services</h2>
+					<section id="two">
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th></th> <!-- Checkbox column -->
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" id="new-resume" name="services[]" value="New Resume" /><label for="new-resume"></label></td>
+										<td>New Resume</td>
+										<td>Professional resume creation</td>
+										<td>$29.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="resume-review" name="services[]" value="Resume Review" /><label for="resume-review"></label></td>
+										<td>Resume Review</td>
+										<td>Get expert feedback on your resume</td>
+										<td>$19.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="new-cover-letter" name="services[]" value="New Cover Letter" /><label for="new-cover-letter"></label></td>
+										<td>New Cover Letter</td>
+										<td>Craft a compelling cover letter</td>
+										<td>$29.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="cover-letter-review" name="services[]" value="Cover Letter Review" /><label for="cover-letter-review"></label></td>
+										<td>Cover Letter Review</td>
+										<td>Improve your existing cover letter</td>
+										<td>$19.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="linkedin-overhaul" name="services[]" value="LinkedIn Overhaul" /><label for="linkedin-overhaul"></label></td>
+										<td>LinkedIn Overhaul</td>
+										<td>Optimize your LinkedIn profile</td>
+										<td>$29.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="linkedin-review" name="services[]" value="LinkedIn Review" /><label for="linkedin-review"></label></td>
+										<td>LinkedIn Review</td>
+										<td>Get profile feedback</td>
+										<td>$29.99</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="other" name="services[]" value="Other" /><label for="other"></label></td>
+										<td>Other</td>
+										<td>Custom request or service</td>
+										<td>TBD</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<!-- End Services Table -->
+
+					<!-- Begin Contact Info Section -->
+					<section id="three">
+						<h2>Get In Touch</h2>
+						<div class="row gtr-uniform gtr-50">
+							<div class="col-6 col-12-xsmall">
+								<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" required />
+							</div>
+							<div class="col-6 col-12-xsmall">
+								<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" required />
+							</div>
+							<div class="col-12">
+								<select name="demo-category" id="demo-category">
+									<option value="">- Category -</option>
+									<option value="1">Undergrad</option>
+									<option value="2">Graduate School</option>
+									<option value="3">Professional</option>
+								</select>
+							</div>
+							<div class="col-12 upload-button" style="display: flex; gap: 10px; align-items: center;">
+								<input type="file" name="file-upload" id="file-upload" accept=".pdf">
+								<button id="remove-file" style="display:none; font-size: 12px; color: #888; background: none; border: none; text-decoration: underline; cursor: pointer;">Remove File</button>
+							</div>
+							<div class="col-6 col-12-small">
+								<input type="checkbox" id="demo-copy" name="demo-copy">
+								<label for="demo-copy">Email me a copy of this message</label>
+							</div>
+							<div class="col-6 col-12-small">
+								<input type="checkbox" id="demo-human" name="demo-human" checked>
+								<label for="demo-human">I am a human and not a robot</label>
+							</div>
+							<div class="col-12">
+								<textarea name="demo-message" id="demo-message" placeholder="Additional Comments or Requests" rows="6" ></textarea>
+							</div>
+							<div class="col-12">
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Reset" /></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<!-- End Contact Info Section -->
+				</form>
+				<!-- End Form -->
+
+				<!-- Popup message -->
+				<div id="thank-you-popup" style="display:none;">
+					<p>Thanks for submitting!</p>
+				</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<!-- Social Media Icons -->
+				<ul class="icons" style="margin-bottom: 125px;">
+					<li><a href="https://www.linkedin.com/in/eannabrown/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				</ul>
+				<!-- Text Links -->
+				<p style="color: #000000; font-size: 0.65rem;">
+					<a href="https://www.linkedin.com/in/steven-zuraski/" target="_blank" style="color: #000000; text-decoration: none;">Programmed by STZ</a> | 
+					<a href="https://html5up.net" target="_blank" style="color: #000000; text-decoration: none;">Design by HTML5 UP</a>
+				</p>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<!-- Begin Function scripts -->
+			<script>
+				function removeFile() 
+				{
+					document.querySelector('.upload-button input[type="file"]').value = "";
+				}
+				function downloadFile()
+				{
+					const uploadedFile = document.querySelector('.upload-button input[type="file"]').files[0];
+					if (uploadedFile)
+						{
+						const url = URL.createObjectURL(uploadedFile);
+						const a = document.createElement('a');
+						a.href = url;
+						a.download = uploadedFile.name;
+						a.click();
+						URL.revokeObjectURL(url);
+					}
+					else
+					{
+						alert("No file uploaded.");
+					}
+				}
+			</script>
+
+			<!-- End function scripts -->
+
+			<!-- Begin reload script -->
+
+			<script>
+				// JavaScript to clear the form on page load
+				window.onload = function() {
+					window.scrollTo(0, 0);
+					// Clear the message box
+					var messageBox = document.getElementById("demo-message");
+					if (messageBox) {
+						messageBox.value = "";
+					}
+			
+					// Clear the services checkboxes
+					var checkboxes = document.querySelectorAll("input[name='services[]']");
+					checkboxes.forEach(function(checkbox) {
+						checkbox.checked = false;
+					});
+			
+					// Clear the file input
+					var fileInput = document.getElementById("file-upload");
+					if (fileInput) {
+						fileInput.value = "";
+					}
+			
+					// Optionally hide the remove file button
+					var removeButton = document.getElementById("remove-file");
+					if (removeButton) {
+						removeButton.style.display = "none";
+					}
+			
+					// Clear the category dropdown
+					var categorySelect = document.getElementById("demo-category");
+					if (categorySelect) {
+						categorySelect.selectedIndex = 0;  // Set to the first (default) option
+					}
+			
+					// Clear the name input
+					var nameInput = document.getElementById("demo-name");
+					if (nameInput) {
+						nameInput.value = "";
+					}
+			
+					// Clear the email input
+					var emailInput = document.getElementById("demo-email");
+					if (emailInput) {
+						emailInput.value = "";
+					}
+			
+					// Uncheck the "email me a copy" checkbox
+					var emailCopyCheckbox = document.getElementById("demo-copy");
+					if (emailCopyCheckbox) {
+						emailCopyCheckbox.checked = false;
+					}
+				};
+			</script>
+			
+			<!-- End reload script -->
+
+			<!-- Begin Remove Button script -->
+
+			<script>
+				
+				// JavaScript to toggle the "Remove File" button visibility
+				const fileInput = document.getElementById("file-upload");
+				const removeButton = document.getElementById("remove-file");
+
+				// Show the remove button if a file is selected
+				fileInput.addEventListener("change", function()
+				{
+					if (fileInput.files.length > 0)
+					{
+						removeButton.style.display = "inline-block";
+					}
+					else
+					{
+						removeButton.style.display = "none";
+					}
+				});
+
+				// Clear the file input when the "Remove File" button is clicked
+				removeButton.addEventListener("click", function(event)
+				{
+					event.preventDefault(); // Prevent the page from scrolling to the top
+					fileInput.value = ""; // Clear the file input
+					removeButton.style.display = "none"; // Hide the remove button
+				});
+			</script>
+
+			<!-- End Remove Button script -->
+
+			<!-- Begin form submission script -->
+			<script>
+				document.getElementById("form").addEventListener("submit", function(event)
+				{
+					event.preventDefault(); // Prevent the form from submitting the traditional way
+
+					// Get all selected services (checkboxes)
+					var selectedServices = document.querySelectorAll('input[name="services[]"]:checked');
+					
+					// Check if no services are selected
+					if (selectedServices.length === 0)
+					{
+						// Alert the user to select a service
+						alert("Please select at least one service.");
+						return; // Stop the form submission
+					}
+
+					var formData = new FormData(this); // Get all form data
+
+					var xhr = new XMLHttpRequest();
+					xhr.open("POST", "sendEmail.php", true);
+
+					// Log the form data for debugging
+					console.log("Form Data: ", formData);
+
+					// When the request is successful, show the success message
+					xhr.onload = function()
+					{
+						console.log(xhr.status); // Log status code
+						console.log(xhr.responseText); // Log response text
+
+						if (xhr.status == 200)
+						{
+							// Hide the form
+							document.getElementById("form").reset(); // Optionally reset form fields
+
+							// Show thank you popup
+							document.getElementById("thank-you-popup").style.display = "block";
+
+							// Optionally hide the popup after a few seconds
+							setTimeout(function()
+							{
+								document.getElementById("thank-you-popup").style.display = "none";
+							}, 10000); // Hide after 10 seconds
+						} else
+						{
+							alert("Something went wrong. Please try again.");
+						}
+					};
+
+					// Handle error if the request fails
+					xhr.onerror = function()
+					{
+						alert("Request failed. Please try again later.");
+					};
+
+					// Send the form data to the server
+					xhr.send(formData);
+				});
+			</script>
+			<!-- End form submission script -->
+	</body>
+</html>
