@@ -327,17 +327,22 @@
 						alert("Something went wrong. Please try again.");
 					});
 				});
-				</script>
+				</script> 
 				
 			<!-- End form submission script -->
 
 			<!-- EmailJS Script -->
-			<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-				<script type="text/javascript">
+			<script type="text/javascript"
+					src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+			</script>
+			<script type="text/javascript">
 				(function(){
-					emailjs.init("m7t2r4ztbPG_7ugP-"); // Replace with your actual EmailJS public key
+					emailjs.init({
+						publicKey: "m7t2r4ztbPG_7ugP",
+					});
 				})();
 			</script>
+
 
 			<!-- end EmailJS Script -->
 	</body>
