@@ -100,13 +100,13 @@
 						<h2>Get In Touch</h2>
 						<div class="row gtr-uniform gtr-50">
 							<div class="col-6 col-12-xsmall">
-								<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" required />
+								<input type="text" name="name" id="name" value="" placeholder="Name" required />
 							</div>
 							<div class="col-6 col-12-xsmall">
-								<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" required />
+								<input type="email" name="user-email" id="user-email" value="" placeholder="Email" required />
 							</div>
 							<div class="col-12">
-								<select name="demo-category" id="demo-category">
+								<select name="career-category" id="career-category">
 									<option value="">- Category -</option>
 									<option value="1">Undergrad</option>
 									<option value="2">Graduate School</option>
@@ -118,15 +118,15 @@
 								<button id="remove-file" style="display:none; font-size: 12px; color: #888; background: none; border: none; text-decoration: underline; cursor: pointer;">Remove File</button>
 							</div>
 							<div class="col-6 col-12-small">
-								<input type="checkbox" id="demo-copy" name="demo-copy">
-								<label for="demo-copy">Email me a copy of this message</label>
+								<input type="checkbox" id="cc-user" name="cc-user">
+								<label for="cc-user">Email me a copy of this message</label>
 							</div>
 							<div class="col-6 col-12-small">
-								<input type="checkbox" id="demo-human" name="demo-human" checked>
-								<label for="demo-human">I am a human and not a robot</label>
+								<input type="checkbox" id="user-human" name="user-human" checked>
+								<label for="user-human">I am a human and not a robot</label>
 							</div>
 							<div class="col-12">
-								<textarea name="demo-message" id="demo-message" placeholder="Additional Comments or Requests" rows="6" ></textarea>
+								<textarea name="user-message" id="user-message" placeholder="Additional Comments or Requests" rows="6" ></textarea>
 							</div>
 							<div class="col-12">
 								<ul class="actions">
@@ -203,7 +203,7 @@
 				window.onload = function() {
 					window.scrollTo(0, 0);
 					// Clear the message box
-					var messageBox = document.getElementById("demo-message");
+					var messageBox = document.getElementById("user-message");
 					if (messageBox) {
 						messageBox.value = "";
 					}
@@ -227,25 +227,25 @@
 					}
 			
 					// Clear the category dropdown
-					var categorySelect = document.getElementById("demo-category");
+					var categorySelect = document.getElementById("career-category");
 					if (categorySelect) {
 						categorySelect.selectedIndex = 0;  // Set to the first (default) option
 					}
 			
 					// Clear the name input
-					var nameInput = document.getElementById("demo-name");
+					var nameInput = document.getElementById("name");
 					if (nameInput) {
 						nameInput.value = "";
 					}
 			
 					// Clear the email input
-					var emailInput = document.getElementById("demo-email");
+					var emailInput = document.getElementById("user-email");
 					if (emailInput) {
 						emailInput.value = "";
 					}
 			
 					// Uncheck the "email me a copy" checkbox
-					var emailCopyCheckbox = document.getElementById("demo-copy");
+					var emailCopyCheckbox = document.getElementById("cc-user");
 					if (emailCopyCheckbox) {
 						emailCopyCheckbox.checked = false;
 					}
@@ -302,7 +302,7 @@
 					};
 
 					// Get the category label based on the selected value
-					const selectedCategory = form["demo-category"].value;
+					const selectedCategory = form["career-category"].value;
 					const categoryLabel = categoryMap[selectedCategory] || categoryMap["0"];  // Default to "None selected"
 
 					const selectedServices = Array.from(document.querySelectorAll('input[name="services[]"]:checked'))
@@ -310,16 +310,16 @@
 						.join(", ");
 				
 					const formData = {
-						name: form["demo-name"].value,
-						email: form["demo-email"].value,
+						name: form["name"].value,
+						email: form["user-email"].value,
 						category: categoryLabel,
 						services: selectedServices,
-						message: form["demo-message"].value
+						message: form["user-message"].value
 					};
 
-					// Add CC if "demo-copy" checkbox is checked
-					if (form["demo-copy"].checked) {
-						formData.cc = form["demo-email"].value;  // CC the user's email
+					// Add CC if "cc-user" checkbox is checked
+					if (form["cc-user"].checked) {
+						formData.cc = form["user-email"].value;  // CC the user's email
 					}
 				
 					emailjs.send("service_lhwknnd", "template_stzresumeweb", formData)
