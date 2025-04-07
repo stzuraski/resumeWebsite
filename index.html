@@ -101,7 +101,7 @@
 							</table>
 						</div>
 						
-					<p><strong>All requests will be reviewed. Once reviewed, I will reach out to you with availability to schedule time to meet.</strong></p>
+					<p><strong>Please note that all requests are carefully reviewed to ensure the best possible outcome. I will follow up if a meeting is necessary or if I need additional details to tailor the service to your needs.</strong></p>
 					</section>
 					<!-- End Services Table -->
 
@@ -126,14 +126,6 @@
 							<div class="col-12 upload-button" style="display: flex; gap: 10px; align-items: center;">
 								<input type="file" name="file-upload" id="file-upload" accept=".pdf">
 								<button id="remove-file" style="display:none; font-size: 12px; color: #888; background: none; border: none; text-decoration: underline; cursor: pointer;">Remove File</button>
-							</div>
-							<div class="col-6 col-12-small">
-								<input type="checkbox" id="cc-user" name="cc-user">
-								<label for="cc-user">Email me a copy of this message</label>
-							</div>
-							<div class="col-6 col-12-small">
-								<input type="checkbox" id="user-human" name="user-human">
-								<label for="user-human">I am a human and not a robot</label>
 							</div>
 							<div class="col-12">
 								<textarea name="user-message" id="user-message" placeholder="Additional Comments or Requests" rows="6" ></textarea>
@@ -253,12 +245,6 @@
 					if (emailInput) {
 						emailInput.value = "";
 					}
-			
-					// Uncheck the "email me a copy" checkbox
-					var emailCopyCheckbox = document.getElementById("cc-user");
-					if (emailCopyCheckbox) {
-						emailCopyCheckbox.checked = false;
-					}
 				};
 			</script>
 			
@@ -327,10 +313,7 @@
 						message: form["user-message"].value
 					};
 
-					// Add CC if "cc-user" checkbox is checked
-					if (form["cc-user"].checked) {
-						formData.cc = form["user-email"].value;  // CC the user's email
-					}
+					formData.cc = form["user-email"].value;  // CC the user's email
 				
 					emailjs.send("service_lhwknnd", "template_stzresumeweb", formData)
 					.then(() => {
