@@ -2393,7 +2393,9 @@ table td:first-child {
     text-align: center;
     vertical-align: middle;
     position: relative;
+    width: 50px; /* Optional: set fixed width for checkbox column */
 }
+
 
 /* Ensure label (custom checkbox) is centered inside cell */
 table td:first-child label {
@@ -2412,15 +2414,11 @@ table td, table th {
 }
 
 /* Hiding the default checkbox and styling the label */
-input[type="checkbox"] {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    display: inline-block;
-    margin-right: 10px;
-    opacity: 0; /* Hide the default checkbox */
-    position: relative; /* Positioning for the custom label */
+input[type="checkbox"] + label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
 }
 
 /* Alternating Background for Checkboxes (for the label) */
