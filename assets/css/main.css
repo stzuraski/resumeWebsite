@@ -2388,20 +2388,24 @@ table tbody tr {
     border-right: 0;
 }
 
-/* Center checkbox cells */
+/* Center the checkbox within the cell horizontally and vertically */
 table td:first-child {
     text-align: center;
     vertical-align: middle;
     position: relative;
-    width: 50px; /* Optional: set fixed width for checkbox column */
+    width: 50px;  /* Optional: Set a fixed width for the checkbox column */
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
 }
 
-
-/* Ensure label (custom checkbox) is centered inside cell */
+/* Ensure label (custom checkbox) is centered within the cell */
 table td:first-child label {
     display: inline-block;
-    margin: 0 auto;
+    width: 2.0625em;  /* Same size as the checkbox */
+    height: 2.0625em; 
     position: relative;
+    margin: 0;
 }
 
 table tbody tr:nth-child(2n + 1) {
@@ -2413,12 +2417,33 @@ table td, table th {
     border: solid 1px #efefef; /* Apply borders to each cell */
 }
 
+/* Ensure checkboxes aren't visible */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 /* Hiding the default checkbox and styling the label */
 input[type="checkbox"] + label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 0;
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5em; /* Make room for the custom checkbox */
+    cursor: pointer;
+}
+
+/* Ensure checkboxes are visually centered inside the label */
+input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 2.0625em;
+    height: 2.0625em;
+    border-radius: 0.35em;
+    position: absolute;
+    left: 50%;    /* Center horizontally */
+    top: 50%;     /* Center vertically */
+    transform: translate(-50%, -50%); /* Perfect centering */
 }
 
 /* Alternating Background for Checkboxes (for the label) */
@@ -2430,17 +2455,6 @@ table tbody tr:nth-child(odd) label:before {
 table tbody tr:nth-child(even) label:before {
     background-color: #e2e2e2;  /* Darker background for even rows */
     border: 2px solid #ccc; /* Border for better visibility */
-}
-
-/* Ensure the size of the custom checkbox is the same as before */
-input[type="checkbox"] + label:before {
-    display: inline-block;
-    width: 2.0625em;   /* Make it the same size as before (33px) */
-    height: 2.0625em;  /* Make it the same size as before (33px) */
-    border-radius: 0.35em; /* Rounded corners for checkbox */
-    position: absolute;
-    left: 0;
-    top: 0;
 }
 
 /* Checkbox Checked State */
@@ -2470,6 +2484,11 @@ input[type="radio"] + label {
     position: relative;
 }
 
+/* Align content of all columns except the checkbox column to the top */
+table td:not(:first-child) {
+    vertical-align: top; /* Aligns content to the top of the cells in non-checkbox columns */
+}
+
 /* End Checkboxes */
 
 input[type="radio"] + label:before {
@@ -2491,19 +2510,6 @@ table thead {
 
 table tfoot {
     border-top: solid 2px #efefef;
-}
-
-/* Ensure checkboxes are visible */
-input[type="checkbox"] {
-    visibility: visible !important;
-    display: inline-block !important;
-    width: 20px; /* Explicitly set width */
-    height: 20px; /* Explicitly set height */
-    margin-right: 10px;
-    vertical-align: middle; /* Aligns checkbox properly with text */
-    -webkit-appearance: checkbox; /* Ensures checkboxes are styled */
-    -moz-appearance: checkbox;
-    appearance: checkbox;
 }
 
 /* Button */
