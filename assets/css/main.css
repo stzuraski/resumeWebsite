@@ -2388,6 +2388,20 @@ table tbody tr {
     border-right: 0;
 }
 
+/* Center checkbox cells */
+table td:first-child {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+/* Ensure label (custom checkbox) is centered inside cell */
+table td:first-child label {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+}
+
 table tbody tr:nth-child(2n + 1) {
     background-color: #f7f7f7;
 }
