@@ -42,52 +42,62 @@
 				<!-- Begin Form -->
 				<form id="form">
 					<!-- Services Table -->
-					<h2>Services</h2>
 					<section id="two">
+						<h2>Services</h2>
+						<p><strong>All requests will be reviewed.</strong> Once reviewed, I will reach out to you with availability to schedule time to meet.</p>
+						
+						<h3>Bundles</h3>
+						<ul>
+							<li><strong>Resume + Cover Letter</strong> – $85 <em>(save $15)</em></li>
+							<li><strong>Resume + LinkedIn Overhaul</strong> – $110 <em>(save $15)</em></li>
+							<li><strong>Resume + Cover Letter + LinkedIn Overhaul</strong> – $150 <em>(save $25)</em></li>
+							<li><strong>Full Package</strong> (Resume, Cover Letter, LinkedIn Overhaul, and Resume Review) – $175 <em>(save $40)</em></li>
+						</ul>
 						<div class="table-wrapper">
 							<table>
 								<thead>
 									<tr>
 										<th></th> <!-- Checkbox column -->
 										<th>Name</th>
+										<th>Description</th>
 										<th>Price</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td><input type="checkbox" id="new-resume" name="services[]" value="New Resume" /><label for="new-resume"></label></td>
-										<td>New Resume</td>
-										<td>$29.99</td>
+										<td>New Resume Creation</td>
+										<td>Get a crafted resume tailored to your experience and career goals. Highlight your skills, stand out to employers, and make a lasting impression.</td>
+										<td>$50</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" id="resume-review" name="services[]" value="Resume Review" /><label for="resume-review"></label></td>
 										<td>Resume Review</td>
-										<td>$19.99</td>
+										<td>Receive feedback on your resume with actionable improvements for clarity, formatting, and impact. Optimize your resume to align with industry expectations.</td>
+										<td>$40</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" id="new-cover-letter" name="services[]" value="New Cover Letter" /><label for="new-cover-letter"></label></td>
 										<td>New Cover Letter</td>
-										<td>$29.99</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox" id="cover-letter-review" name="services[]" value="Cover Letter Review" /><label for="cover-letter-review"></label></td>
-										<td>Cover Letter Review</td>
-										<td>$19.99</td>
+										<td>A custom, well-crafted cover letter that showcases your strengths and aligns with the job you’re targeting. Make a strong first impression and boost your chances of landing an interview.</td>
+										<td>$50</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" id="linkedin-overhaul" name="services[]" value="LinkedIn Overhaul" /><label for="linkedin-overhaul"></label></td>
 										<td>LinkedIn Overhaul</td>
-										<td>$29.99</td>
+										<td>Transform your LinkedIn presence with a complete profile refresh. From headline to experience, make your profile compelling, optimized, and aligned with your career aspirations.</td>
+										<td>$50</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" id="linkedin-review" name="services[]" value="LinkedIn Review" /><label for="linkedin-review"></label></td>
 										<td>LinkedIn Review</td>
-										<td>$29.99</td>
+										<td>Ensure your LinkedIn profile reflects your expertise and attracts the right opportunities. Get personalized recommendations to enhance your profile’s visibility and professionalism.</td>
+										<td>$40</td>
 									</tr>
 									<tr>
 										<td><input type="checkbox" id="other" name="services[]" value="Other" /><label for="other"></label></td>
 										<td>Other</td>
-										<td>TBD</td>
+										<td>Price varies (starting at $30, depending on complexity)</td>
 									</tr>
 								</tbody>
 							</table>
@@ -122,7 +132,7 @@
 								<label for="cc-user">Email me a copy of this message</label>
 							</div>
 							<div class="col-6 col-12-small">
-								<input type="checkbox" id="user-human" name="user-human" checked>
+								<input type="checkbox" id="user-human" name="user-human">
 								<label for="user-human">I am a human and not a robot</label>
 							</div>
 							<div class="col-12">
